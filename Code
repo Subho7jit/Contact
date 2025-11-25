@@ -1,0 +1,622 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Subhajit Ghosh - Computational Biology Researcher</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/3022/3022255.png">
+    <style>
+        body {
+            font-family: 'Inter', Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: #F6F6FA;
+            color: #242648;
+        }
+        .container {
+            max-width: 1150px;
+            margin: auto;
+            padding: 44px 16px;
+        }
+        .hero {
+            background: linear-gradient(120deg, #3e2b68 0%, #3380c9 100%);
+            color: #fff;
+            border-radius: 18px;
+            box-shadow: 0 8px 40px rgba(35, 22, 88, 0.20);
+            padding: 54px 24px 30px 24px;
+            text-align: center;
+            margin-bottom: 46px;
+            position: relative;
+            z-index: 1;
+        }
+        .hero-img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            border: 5px solid #fff;
+            object-fit: cover;
+            margin-bottom: 16px;
+            box-shadow: 0 8px 30px #33276233;
+            background: #33276211;
+            display: inline-block;
+        }
+        .hero h1 {
+            font-size: 2.5rem;
+            font-weight: 600;
+            margin: 0 0 12px 0;
+            text-shadow: 0 3px 22px #241a4e60;
+        }
+        .hero .tagline {
+            font-size: 1.22rem;
+            font-weight: 500;
+            margin: 0 0 10px 0;
+            opacity: 0.94;
+        }
+        .hero .subline {
+            font-size: 0.98rem;
+            margin: 0 0 16px 0;
+            opacity: 0.9;
+        }
+        .hero .highlights {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 8px;
+            margin-top: 16px;
+        }
+        .hero .pill {
+            padding: 8px 14px;
+            border-radius: 999px;
+            border: 1px solid #ffffff55;
+            background: #ffffff11;
+            font-size: 0.82rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .hero .pill span {
+            font-size: 1.1rem;
+        }
+        .main-grid {
+            display: grid;
+            grid-template-columns: minmax(0, 1.85fr) minmax(0, 1.25fr);
+            gap: 28px;
+            align-items: flex-start;
+        }
+        .card {
+            background: #ffffff;
+            border-radius: 14px;
+            padding: 18px 18px 16px 18px;
+            margin-bottom: 18px;
+            box-shadow: 0 2px 14px rgba(15, 23, 42, 0.06);
+            border: 1px solid #e5e7eb;
+        }
+        .card h2 {
+            font-size: 1.1rem;
+            margin: 0 0 8px 0;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        .card h2 span.icon {
+            font-size: 1.1rem;
+        }
+        .card-subtitle {
+            font-size: 0.82rem;
+            color: #6b7280;
+            margin-bottom: 10px;
+        }
+        .card p {
+            font-size: 0.9rem;
+            margin: 0 0 8px 0;
+            line-height: 1.5;
+        }
+        .two-column {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 10px 24px;
+        }
+        .tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+        .tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 0.8rem;
+            padding: 6px 10px;
+            border-radius: 999px;
+            background: #eef2ff;
+            color: #3730a3;
+        }
+        .tag span.icon {
+            font-size: 0.9rem;
+        }
+        ul {
+            padding-left: 18px;
+            margin: 0 0 4px 0;
+        }
+        ul li {
+            margin-bottom: 3px;
+            font-size: 0.9rem;
+        }
+        .meta {
+            font-size: 0.82rem;
+            color: #6b7280;
+        }
+        .highlight-box {
+            background: #f8fafc;
+            border-radius: 10px;
+            padding: 10px 12px;
+            margin-top: 6px;
+            border: 1px dashed #e5e7eb;
+        }
+        .highlight-box strong {
+            display: inline-block;
+            margin-bottom: 4px;
+        }
+        .right-column .card {
+            margin-bottom: 14px;
+        }
+        .inline-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 4px 10px;
+            padding: 0;
+            list-style: none;
+            margin-bottom: 2px;
+        }
+        .inline-list li {
+            font-size: 0.88rem;
+        }
+        .cta-button {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 9px 16px;
+            border-radius: 999px;
+            border: none;
+            background: linear-gradient(135deg, #3b82f6, #6366f1);
+            color: white;
+            font-size: 0.9rem;
+            font-weight: 500;
+            cursor: pointer;
+            margin-top: 8px;
+            text-decoration: none;
+            box-shadow: 0 6px 18px rgba(37, 99, 235, 0.4);
+        }
+        .cta-button span {
+            margin-left: 6px;
+            font-size: 1.05rem;
+        }
+        .section-title {
+            font-size: 1.05rem;
+            margin-bottom: 6px;
+            font-weight: 600;
+        }
+        hr {
+            border: none;
+            border-top: 1px dashed #e5e7eb;
+            margin: 10px 0;
+        }
+        .small-muted {
+            font-size: 0.78rem;
+            color: #9ca3af;
+        }
+        .footer-note {
+            text-align: center;
+            font-size: 0.78rem;
+            color: #9ca3af;
+            margin-top: 20px;
+        }
+        @media (max-width: 900px) {
+            .main-grid {
+                grid-template-columns: 1fr;
+            }
+            .hero {
+                padding: 40px 18px 26px 18px;
+            }
+        }
+        @media (max-width: 600px) {
+            .two-column {
+                grid-template-columns: 1fr;
+            }
+            .hero h1 {
+                font-size: 2rem;
+            }
+            .hero .tagline {
+                font-size: 1.06rem;
+            }
+        }
+        .split-layout {
+            display: grid;
+            grid-template-columns: 1.5fr 1.1fr;
+            gap: 18px;
+        }
+        @media (max-width: 900px) {
+            .split-layout {
+                grid-template-columns: 1fr;
+            }
+        }
+        .achievement-row {
+            display: grid;
+            grid-template-columns: 0.7fr 1.35fr;
+            gap: 10px;
+            margin-bottom: 12px;
+            align-items: flex-start;
+        }
+        @media (max-width: 700px) {
+            .achievement-row {
+                grid-template-columns: 1fr;
+            }
+        }
+        .achievement-badge {
+            font-size: 0.8rem;
+            padding: 6px 8px;
+            background: #eff6ff;
+            color: #1d4ed8;
+            border-radius: 8px;
+            border: 1px solid #dbeafe;
+        }
+        .achievement-badge span {
+            font-size: 1rem;
+            margin-right: 4px;
+        }
+        .achievement-content {
+            font-size: 0.86rem;
+        }
+        .achievement-meta {
+            font-size: 0.78rem;
+            color: #6b7280;
+            margin-top: 2px;
+        }
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 10px;
+            margin-top: 4px;
+        }
+        @media (max-width: 700px) {
+            .stats-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+        }
+        .stat-card {
+            background: #f9fafb;
+            border-radius: 8px;
+            padding: 7px 8px;
+            font-size: 0.8rem;
+            border: 1px solid #e5e7eb;
+        }
+        .stat-label {
+            color: #6b7280;
+            margin-bottom: 2px;
+        }
+        .stat-value {
+            font-weight: 600;
+            color: #111827;
+        }
+        .timeline {
+            border-left: 2px solid #e5e7eb;
+            margin-left: 5px;
+            padding-left: 10px;
+        }
+        .timeline-item {
+            margin-bottom: 12px;
+            position: relative;
+            padding-left: 10px;
+        }
+        .timeline-item:before {
+            content: '';
+            position: absolute;
+            left: -12px;
+            top: 4px;
+            width: 8px;
+            height: 8px;
+            border-radius: 999px;
+            background: #3b82f6;
+            box-shadow: 0 0 0 3px #dbeafe;
+        }
+        .timeline-title {
+            font-size: 0.88rem;
+            font-weight: 500;
+        }
+        .timeline-meta {
+            font-size: 0.78rem;
+            color: #6b7280;
+        }
+        .timeline-desc {
+            font-size: 0.83rem;
+            margin-top: 2px;
+        }
+        .pill-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+            margin-top: 4px;
+        }
+        .small-pill {
+            font-size: 0.78rem;
+            padding: 4px 8px;
+            border-radius: 999px;
+            background: #f3f4ff;
+            color: #3730a3;
+        }
+        .pub-list {
+            padding-left: 16px;
+            margin: 0;
+        }
+        .pub-list li {
+            margin-bottom: 4px;
+            font-size: 0.83rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="hero">
+            <img src="https://raw.githubusercontent.com/Subho7jit/Contact/main/Profile.png" alt="Subhajit Ghosh" class="hero-img">
+
+            <h1>Subhajit Ghosh</h1>
+            <p class="tagline">Computational Biology Researcher | Network Biology | AI in Healthcare</p>
+            <p class="subline">Decoding disease progression and drug response using systems biology, network pharmacology, and machine learning.</p>
+
+            <div class="highlights">
+                <div class="pill"><span>🎓</span>PhD Researcher, University of North Bengal</div>
+                <div class="pill"><span>🧠</span>Network Biology & Systems Pharmacology</div>
+                <div class="pill"><span>💻</span>Python, R, ML for Omics & Clinical Data</div>
+                <div class="pill"><span>🧬</span>Drug Discovery, Biomarkers & Precision Medicine</div>
+            </div>
+        </header>
+
+        <main class="main-grid">
+            <section>
+                <article class="card">
+                    <h2><span class="icon">👨‍🔬</span>About</h2>
+                    <p>Welcome to the professional webpage of Subhajit Ghosh, a dedicated researcher in computational biology. With over five years of experience, Subhajit focuses on network biology, transcriptomics, and machine learning for uncovering biomarkers and therapeutic strategies for complex diseases.</p>
+                    <p>Expertise includes molecular docking, molecular dynamics, and advanced Python/R workflows for high-dimensional genomics and clinical data interpretation.</p>
+                </article>
+
+                <article class="card">
+                    <h2><span class="icon">🧩</span>Core Expertise</h2>
+                    <div class="two-column">
+                        <div>
+                            <ul>
+                                <li>Network Biology &amp; Systems Pharmacology</li>
+                                <li>Transcriptomics &amp; Multi-omics Integration</li>
+                                <li>Machine Learning in Biological Data</li>
+                                <li>Molecular Docking &amp; Dynamics</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <ul>
+                                <li>Statistical Data Analysis</li>
+                                <li>Biomarker Discovery &amp; Validation</li>
+                                <li>Python &amp; R Programming for Bioinformatics</li>
+                                <li>QSAR &amp; ADMET Modeling</li>
+                            </ul>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="card">
+                    <h2><span class="icon">🎯</span>Research Focus</h2>
+                    <div class="two-column">
+                        <div>
+                            <ul>
+                                <li>Machine Learning in Biology</li>
+                                <li>Systems Biology</li>
+                                <li>Structural Biology</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <ul>
+                                <li>Drug Discovery / Repurposing</li>
+                                <li>Disease Biomarker Identification</li>
+                            </ul>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="card">
+                    <h2><span class="icon">🧪</span>Technical Skills</h2>
+                    <div class="two-column">
+                        <div>
+                            <ul>
+                                <li>Python &amp; R Programming</li>
+                                <li>Molecular Docking Tools</li>
+                                <li>Molecular Dynamics Simulation</li>
+                                <li>QSAR Modelling</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <ul>
+                                <li>Statistical Analysis</li>
+                                <li>Machine Learning Algorithms</li>
+                                <li>Genomic Data Analysis</li>
+                            </ul>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="card">
+                    <h2><span class="icon">📈</span>Experience Snapshot</h2>
+                    <ul>
+                        <li>5+ Years in Computational Biology</li>
+                        <li>3+ Years: Molecular Biology/Biochemistry</li>
+                        <li>Bioinformatics Research</li>
+                        <li>In Silico Pharmacology &amp; Drug Development</li>
+                        <li>Machine Learning &amp; Deep Learning</li>
+                        <li>HPC Usage &amp; Scripting</li>
+                    </ul>
+                </article>
+
+                <article class="card">
+                    <h2><span class="icon">📊</span>Recent Publications &amp; Contributions</h2>
+                    <p class="card-subtitle">Selected works in computational biology, network medicine, and translational bioinformatics.</p>
+                    <ul class="pub-list">
+                        <li>Network biology of hepatocellular carcinoma and NAFLD progression (multi-omics integration, biomarker discovery).</li>
+                        <li>Drug repurposing frameworks using network pharmacology and transcriptomic signatures.</li>
+                        <li>Machine learning models for prognostic and diagnostic biomarker identification.</li>
+                        <li>Computational screening and docking workflows for multi-target therapeutics.</li>
+                    </ul>
+                    <p class="small-muted">Full publication list available on ORCID and Google Scholar.</p>
+                </article>
+
+                <article class="card">
+                    <h2><span class="icon">🧬</span>Ongoing Research Directions</h2>
+                    <div class="two-column">
+                        <div>
+                            <ul>
+                                <li>Network-based models of disease progression (e.g., NAFLD → HCC).</li>
+                                <li>Integrating transcriptomics, proteomics, and clinical data for precision medicine.</li>
+                                <li>Deep learning approaches for biological sequence and structure analysis.</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <ul>
+                                <li>Drug repurposing using network proximity and pathway perturbation metrics.</li>
+                                <li>Biomarker discovery from high-dimensional omics datasets.</li>
+                                <li>In silico screening and validation of phytochemicals and small molecules.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </article>
+            </section>
+
+            <aside class="right-column">
+                <article class="card">
+                    <h2><span class="icon">📬</span>Contact</h2>
+                    <p><strong>Email:</strong></p>
+                    <ul>
+                        <li>subho7jit@gmail.com</li>
+                        <li>rs_subhajitg@nbu.ac.in</li>
+                    </ul>
+                    <p><strong>Affiliation:</strong><br>PhD Researcher, University of North Bengal, India</p>
+                    <p><strong>Profiles:</strong></p>
+                    <ul>
+                        <li>ORCID: <a href="https://orcid.org/0000-0002-2897-5956" target="_blank">0000-0002-2897-5956</a></li>
+                        <li>GitHub: <a href="https://github.com/Subho7jit" target="_blank">github.com/Subho7jit</a></li>
+                        <li>LinkedIn: <a href="https://www.linkedin.com/in/subhajit-ghosh-b14b36199" target="_blank">LinkedIn Profile</a></li>
+                    </ul>
+                </article>
+
+                <article class="card">
+                    <h2><span class="icon">🏆</span>Academic Achievements</h2>
+                    <div class="achievement-row">
+                        <div class="achievement-badge">
+                            <span>📚</span><strong>Book Chapters</strong>
+                        </div>
+                        <div class="achievement-content">
+                            <p>Contributed book chapters in computational biology and systems pharmacology, focusing on network-based approaches for understanding disease mechanisms and drug response.</p>
+                            <p class="achievement-meta">Topics include multi-omics integration, network biomarkers, and AI in healthcare.</p>
+                        </div>
+                    </div>
+
+                    <div class="achievement-row">
+                        <div class="achievement-badge">
+                            <span>📰</span><strong>Research Papers</strong>
+                        </div>
+                        <div class="achievement-content">
+                            <p>Published peer-reviewed articles on network biology, transcriptomics-based biomarker discovery, and computational drug repurposing.</p>
+                            <p class="achievement-meta">Emphasis on hepatocellular carcinoma, NAFLD progression, and other complex diseases.</p>
+                        </div>
+                    </div>
+
+                    <div class="achievement-row">
+                        <div class="achievement-badge">
+                            <span>🎤</span><strong>Conferences</strong>
+                        </div>
+                        <div class="achievement-content">
+                            <p>Presented research at national and international conferences, highlighting applications of machine learning and network biology in disease modeling and drug discovery.</p>
+                            <p class="achievement-meta">Active participation in computational biology and bioinformatics events.</p>
+                        </div>
+                    </div>
+
+                    <div class="achievement-row">
+                        <div class="achievement-badge">
+                            <span>🧪</span><strong>Workshops</strong>
+                        </div>
+                        <div class="achievement-content">
+                            <p>Engaged in workshops on advanced bioinformatics, machine learning, and high-performance computing for biological data analysis.</p>
+                            <p class="achievement-meta">Continuous upskilling in modern computational tools and frameworks.</p>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="card">
+                    <h2><span class="icon">🧮</span>Skills Overview</h2>
+                    <div class="stats-grid">
+                        <div class="stat-card">
+                            <div class="stat-label">Programming</div>
+                            <div class="stat-value">Python, R</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-label">Modeling</div>
+                            <div class="stat-value">ML, QSAR</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-label">Structural</div>
+                            <div class="stat-value">Docking, MD</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-label">Data</div>
+                            <div class="stat-value">Omics, Clinical</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-label">Analysis</div>
+                            <div class="stat-value">Statistics</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-label">Systems</div>
+                            <div class="stat-value">Network Biology</div>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="card">
+                    <h2><span class="icon">🎓</span>Education &amp; Training</h2>
+                    <div class="timeline">
+                        <div class="timeline-item">
+                            <div class="timeline-title">PhD in Bioinformatics / Computational Biology</div>
+                            <div class="timeline-meta">University of North Bengal</div>
+                            <div class="timeline-desc">Research focused on network biology, biomarker discovery, and drug repurposing using multi-omics and clinical data.</div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-title">MSc in Biotechnology</div>
+                            <div class="timeline-meta">Graduated 2020</div>
+                            <div class="timeline-desc">Training in molecular biology, biochemistry, and foundational bioinformatics.</div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-title">CSIR NET Qualified</div>
+                            <div class="timeline-meta">Life Sciences</div>
+                            <div class="timeline-desc">National-level qualification demonstrating strong grasp of biological sciences.</div>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="card">
+                    <h2><span class="icon">🤝</span>Collaborations &amp; Interests</h2>
+                    <p class="card-subtitle">Open to collaborations in computational biology, AI in healthcare, and systems pharmacology.</p>
+                    <div class="pill-row">
+                        <span class="small-pill">Network Medicine</span>
+                        <span class="small-pill">Drug Repurposing</span>
+                        <span class="small-pill">Cancer Systems Biology</span>
+                        <span class="small-pill">Multi-omics Integration</span>
+                        <span class="small-pill">HPC for Biology</span>
+                        <span class="small-pill">Deep Learning in Bio</span>
+                    </div>
+                    <a href="mailto:subho7jit@gmail.com" class="cta-button">
+                        Get in Touch <span>→</span>
+                    </a>
+                </article>
+            </aside>
+        </main>
+
+        <p class="footer-note">This webpage summarizes the research profile, expertise, and interests of Subhajit Ghosh in computational and systems biology.</p>
+    </div>
+</body>
+</html>
